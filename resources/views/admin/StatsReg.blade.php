@@ -25,6 +25,7 @@
             <br/>
 
             {{-- target --}}
+            <label>산출 결과</label>
             <div class="checkbox-container" id="result_target" name="result_target">
                 <label>
                     <input type="checkbox" id="selectAll"> 전체 선택
@@ -62,7 +63,7 @@
             </div>
             <div class="selected-items">선택된 항목: 없음</div>
 
-            joinTarget
+            <label>산출 조건</label>
             <select name="join_target" id="join_target" >
                 <option value="none">없음</option>
                 <option value="status">status</option>
