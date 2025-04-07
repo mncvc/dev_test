@@ -66,4 +66,28 @@ class LogController extends Controller
 
     }
 
+    function logFileMonitor(Request $request){
+        # 생성 정보 확인 (생성 테이블, 사용자입력 정보, 사용자 요청 통계 정보, 산출 정보, 오류 로그 ...)
+
+
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

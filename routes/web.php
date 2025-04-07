@@ -33,17 +33,17 @@ Route::get('/admin', [ListController::class, 'index'])->name('admin.index')->mid
 //Route::get('/admin/create', [ListController::class, 'create'])->name('admin.test');
 
 // 로그인
-Route::get('/login', [UserController::class, 'index'])->name('admin.login');
+Route::get('/login', [UserController::class, 'index'])->name('admin.show');
 Route::get('/logout', [UserController::class, 'logout'])->name('admin.logout');
 
 Route::post('/login', [UserController::class, 'login'])->name('admin.login');
 Route::get('/createQr', [UserController::class, 'createQr'])->name('admin.createQr');
-Route::get('/otpAuth', [UserController::class, 'showOtp'])->name('admin.otpAuth');
+Route::get('/otpAuth', [UserController::class, 'showOtp'])->name('admin.showOtp');
 Route::post('/otpAuth', [UserController::class, 'otpProcess'])->name('admin.otpAuth');
 
 // 회원가입
 Route::get('/signup', [UserController::class, 'signUpForm'])->name('admin.signup')->middleware('basic_auth');
-Route::post('/signup', [UserController::class, 'signUpProcess'])->name('admin.signup');
+Route::post('/signup', [UserController::class, 'signUpProcess'])->name('admin.signup2');
 
 Route::get('/user', [UserController::class, 'showUser'])->name('admin.user')->middleware('basic_auth');
 
@@ -64,10 +64,11 @@ Route::get('/log', [LogController::class, 'index'])->name('log.index')->middlewa
 // 통계 리스트
 Route::get('/stats',[StatsController::class, 'index'])->name('stats.index')->middleware('basic_auth');
 
-
 Route::get('/statsReg',[StatsController::class, 'create'])->name('stats.create')->middleware('basic_auth');
 
 Route::post('/statsReg/t',[StatsController::class, 'setStats'])->name('stats.setStats')->middleware('basic_auth');
+
+Route::post('/stats/process',[StatsController::class, 'statsProcess'])->name('stats.statsProcess');
 
 //통계 프로세스
 

@@ -1,0 +1,124 @@
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Cron Start ======= 2025-03-31 12:42:01\nSEQ ==>1
+   ErrorException  : Use of undefined constant StatsDbConnection - assumed 'StatsDbConnection' (this will throw an Error in a future version of PHP)
+
+  at /home/mania_stats2/app/Http/Controllers/stats_main/StatsUserController.php:1589
+    1585|             }
+    1586|             //DB Connection 체크
+    1587|             $CUserInfodbSlave = DB::connection(DBConnection);
+    1588| //            $CDwMaster = DB::connection(DBConnection);
+  > 1589|             $CDwMaster = DB::connection(StatsDbConnection);
+    1590| //            dd($CDwMaster);
+    1591|
+    1592|             if (empty($CUserInfodbSlave)) {
+    1593|                 throw new FileException("서비스가 원할하지 않습니다. 잠시후 다시 이용해주세요.", ERR_BACK);
+
+  Exception trace:
+
+  1   Illuminate\Foundation\Bootstrap\HandleExceptions::handleError("Use of undefined constant StatsDbConnection - assumed 'StatsDbConnection' (this will throw an Error in a future version of PHP)", "/home/mania_stats2/app/Http/Controllers/stats_main/StatsUserController.php", ["n", Object(Illuminate\Database\MySqlConnection)])
+      /home/mania_stats2/app/Http/Controllers/stats_main/StatsUserController.php:1589
+
+  2   App\Http\Controllers\stats_main\StatsUserController::stats_member_info_join_merge("n")
+      /home/mania_stats2/app/Http/Controllers/cron/CronCheck.php:163
+
+  Please use the argument -v to see more details.
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Cron Start ======= 2025-03-31 12:44:01\nSEQ ==>2
+   Illuminate\Database\QueryException  : SQLSTATE[HY000]: General error: 1615 Prepared statement needs to be re-prepared (SQL: select UI.user_id,UI.user_reg_ip,UI.user_reg_date,UI.user_last_loginTime,CASE UJ.join_path WHEN 1 THEN 'PC' WHEN 2 THEN '모바일' ELSE 'PC' END AS join_path,CASE UP.ci_v WHEN 1 THEN '안심체크' WHEN 2 THEN '아이핀' WHEN 3 THEN '휴대폰' ELSE '확인불가' END AS ci_v,UP.birth,CASE UP.sex WHEN 1 THEN '남성' WHEN 2 THEN '여성' ELSE '확인불가' END AS sex,UP.fgn from `userinfodb`.`user_info` as `UI` left join `userinfodb`.`user_state` as `US` on `UI`.`user_no` = `US`.`user_no` left join `userinfodb`.`user_encrypted` as `UE` on `UI`.`user_no` = `UE`.`user_no` left join `userinfodb`.`vw_wiselog_user` as `UW` on `UI`.`user_no` = `UW`.`user_no` left join `userinfodb`.`user_join` as `UJ` on `UI`.`user_no` = `UJ`.`user_no` left join `userinfodb`.`user_ipin` as `UP` on `UI`.`user_no` = `UP`.`user_no` where user_reg_date >= '2025-03-28 00:00:00' and user_reg_date <= '2025-03-30 23:59:59')
+
+  at /home/mania_stats2/vendor/laravel/framework/src/Illuminate/Database/Connection.php:669
+    665|         // If an exception occurs when attempting to run a query, we'll format the error
+    666|         // message to include the bindings with SQL, which will make this exception a
+    667|         // lot more helpful to the developer instead of just the database's errors.
+    668|         catch (Exception $e) {
+  > 669|             throw new QueryException(
+    670|                 $query, $this->prepareBindings($bindings), $e
+    671|             );
+    672|         }
+    673|
+
+  Exception trace:
+
+  1   PDOException::("SQLSTATE[HY000]: General error: 1615 Prepared statement needs to be re-prepared")
+      /home/mania_stats2/vendor/laravel/framework/src/Illuminate/Database/Connection.php:335
+
+  2   PDOStatement::execute()
+      /home/mania_stats2/vendor/laravel/framework/src/Illuminate/Database/Connection.php:335
+
+  Please use the argument -v to see more details.
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Cron Start ======= 2025-03-31 12:57:02\nSEQ ==>3
+   Illuminate\Database\QueryException  : SQLSTATE[HY000]: General error: 1615 Prepared statement needs to be re-prepared (SQL: select UI.user_id,UI.user_address2,UI.user_reg_ip,UI.user_reg_date,UI.user_last_loginTime,CASE UJ.join_path WHEN 1 THEN 'PC' WHEN 2 THEN '모바일' ELSE 'PC' END AS join_path,CASE UP.ci_v WHEN 1 THEN '안심체크' WHEN 2 THEN '아이핀' WHEN 3 THEN '휴대폰' ELSE '확인불가' END AS ci_v,UP.birth,CASE UP.sex WHEN 1 THEN '남성' WHEN 2 THEN '여성' ELSE '확인불가' END AS sex,UP.fgn from `userinfodb`.`user_info` as `UI` left join `userinfodb`.`user_state` as `US` on `UI`.`user_no` = `US`.`user_no` left join `userinfodb`.`user_encrypted` as `UE` on `UI`.`user_no` = `UE`.`user_no` left join `userinfodb`.`vw_wiselog_user` as `UW` on `UI`.`user_no` = `UW`.`user_no` left join `userinfodb`.`user_join` as `UJ` on `UI`.`user_no` = `UJ`.`user_no` left join `userinfodb`.`user_ipin` as `UP` on `UI`.`user_no` = `UP`.`user_no` where user_reg_date >= '2025-03-30 00:00:00' and user_reg_date <= '2025-03-30 23:59:59')
+
+  at /home/mania_stats2/vendor/laravel/framework/src/Illuminate/Database/Connection.php:669
+    665|         // If an exception occurs when attempting to run a query, we'll format the error
+    666|         // message to include the bindings with SQL, which will make this exception a
+    667|         // lot more helpful to the developer instead of just the database's errors.
+    668|         catch (Exception $e) {
+  > 669|             throw new QueryException(
+    670|                 $query, $this->prepareBindings($bindings), $e
+    671|             );
+    672|         }
+    673|
+
+  Exception trace:
+
+  1   PDOException::("SQLSTATE[HY000]: General error: 1615 Prepared statement needs to be re-prepared")
+      /home/mania_stats2/vendor/laravel/framework/src/Illuminate/Database/Connection.php:335
+
+  2   PDOStatement::execute()
+      /home/mania_stats2/vendor/laravel/framework/src/Illuminate/Database/Connection.php:335
+
+  Please use the argument -v to see more details.
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+already start statsRunning scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Cron Start ======= 2025-03-31 13:03:02\nSEQ ==>3
+
+   Illuminate\Database\QueryException  : SQLSTATE[HY000]: General error: 1615 Prepared statement needs to be re-prepared (SQL: select UI.user_id,UI.user_address2,UI.user_reg_ip,UI.user_reg_date,UI.user_last_loginTime,CASE UJ.join_path WHEN 1 THEN 'PC' WHEN 2 THEN '모바일' ELSE 'PC' END AS join_path,CASE UP.ci_v WHEN 1 THEN '안심체크' WHEN 2 THEN '아이핀' WHEN 3 THEN '휴대폰' ELSE '확인불가' END AS ci_v,UP.birth,CASE UP.sex WHEN 1 THEN '남성' WHEN 2 THEN '여성' ELSE '확인불가' END AS sex,UP.fgn from `userinfodb`.`user_info` as `UI` left join `userinfodb`.`user_state` as `US` on `UI`.`user_no` = `US`.`user_no` left join `userinfodb`.`user_encrypted` as `UE` on `UI`.`user_no` = `UE`.`user_no` left join `userinfodb`.`vw_wiselog_user` as `UW` on `UI`.`user_no` = `UW`.`user_no` left join `userinfodb`.`user_join` as `UJ` on `UI`.`user_no` = `UJ`.`user_no` left join `userinfodb`.`user_ipin` as `UP` on `UI`.`user_no` = `UP`.`user_no` where user_reg_date >= '2025-03-30 00:00:00' and user_reg_date <= '2025-03-30 23:59:59')
+
+  at /home/mania_stats2/vendor/laravel/framework/src/Illuminate/Database/Connection.php:669
+    665|         // If an exception occurs when attempting to run a query, we'll format the error
+    666|         // message to include the bindings with SQL, which will make this exception a
+    667|         // lot more helpful to the developer instead of just the database's errors.
+    668|         catch (Exception $e) {
+  > 669|             throw new QueryException(
+    670|                 $query, $this->prepareBindings($bindings), $e
+    671|             );
+    672|         }
+    673|
+
+  Exception trace:
+
+  1   PDOException::("SQLSTATE[HY000]: General error: 1615 Prepared statement needs to be re-prepared")
+      /home/mania_stats2/vendor/laravel/framework/src/Illuminate/Database/Connection.php:335
+
+  2   PDOStatement::execute()
+      /home/mania_stats2/vendor/laravel/framework/src/Illuminate/Database/Connection.php:335
+
+  Please use the argument -v to see more details.
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Cron Start ======= 2025-03-31 13:04:01\nSEQ ==>4
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Running scheduled command: \App\Http\Controllers\cron\CronCheck@Cron_Check
+Cron Start ======= 2025-03-31 13:09:01\nSEQ ==>5
